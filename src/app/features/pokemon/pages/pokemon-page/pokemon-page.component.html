@@ -1,0 +1,32 @@
+<h1 class="title">PokeAPI</h1>
+
+<div class="search-container">
+    <input type="text" placeholder="Buscar Pokémon..." (input)="searchPokemon($event)" />
+</div>
+
+<div class="not-found" *ngIf="notFound">
+    No se encontró ningún Pokémon con ese nombre.
+</div>
+
+<div *ngIf="loading" class="message">
+    Cargando Pokémon...
+</div>
+
+<div *ngIf="error" class="message error">
+    Error cargando Pokémon
+</div>
+
+<app-pokemon-list *ngIf="!loading && !error" [pokemons]="filteredPokemons">
+</app-pokemon-list>
+
+<div class="pagination">
+    <button (click)="previousPage()" [disabled]="currentPage === 0">
+        Anterior
+    </button>
+
+    <span>Página {{ currentPage + 1 }}</span>
+
+    <button (click)="nextPage()">
+        Siguiente
+    </button>
+</div>
