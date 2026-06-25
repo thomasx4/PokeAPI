@@ -49,7 +49,6 @@ http://localhost:4200
 ```
 La aplicación se recargará automáticamente al realizar cambios en el código.
 
-## Estructura del Proyecto
 
 ## API Utilizada
 
